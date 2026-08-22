@@ -274,9 +274,15 @@ int dram_init(void)
 {
 	struct boot_file_head *spl = get_spl_header(SPL_DRAM_HEADER_VERSION);
 
-	if (spl == INVALID_SPL_HEADER)
+	if (spl == INVALID_SPL_HEADER) {
+#if defined(CONFIG_MACH_SUN60I_A733)
+		/* boot0 has already trained and sized 6GB LPDDR5 DRAM; avoid clobbering BL31/OP-TEE */
+		gd->ram_size = 0x180000000ULL;
+#else
 		gd->ram_size = get_ram_size((long *)PHYS_SDRAM_0,
 					    PHYS_SDRAM_0_SIZE);
+#endif
+	}
 	else
 		gd->ram_size = (phys_addr_t)spl->dram_size << 20;
 
