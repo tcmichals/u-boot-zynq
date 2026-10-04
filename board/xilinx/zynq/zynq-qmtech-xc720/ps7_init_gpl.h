@@ -115,15 +115,15 @@ extern unsigned long  * ps7_peripherals_init_data;
 #define SCU_GLOBAL_TIMER_AUTO_INC	0xF8F00218
 
 int ps7_config( unsigned long*);
-int ps7_init();
-int ps7_post_config();
-int ps7_debug();
+int ps7_init(void);
+int ps7_post_config(void);
+int ps7_debug(void);
 char* getPS7MessageInfo(unsigned key);
 
 void perf_start_clock(void);
 void perf_disable_clock(void);
 void perf_reset_clock(void);
-void perf_reset_and_start_timer(); 
+void perf_reset_and_start_timer(void); 
 int get_number_of_cycles_for_delay(unsigned int delay); 
 #ifdef __cplusplus
 }

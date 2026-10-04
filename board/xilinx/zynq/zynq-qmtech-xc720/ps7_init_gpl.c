@@ -11817,7 +11817,7 @@ getPS7MessageInfo(unsigned key) {
 }
 
 unsigned long
-ps7GetSiliconVersion () {
+ps7GetSiliconVersion (void) {
   // Read PS version from MCTRL register [31:28]
   unsigned long mask = 0xF0000000;
   unsigned long *addr = (unsigned long*) 0XF8007080;    
@@ -11940,7 +11940,7 @@ unsigned long *ps7_ddr_init_data = ps7_ddr_init_data_3_0;
 unsigned long *ps7_peripherals_init_data = ps7_peripherals_init_data_3_0;
 
 int
-ps7_post_config() 
+ps7_post_config(void) 
 {
   // Get the PS_VERSION on run time
   unsigned long si_ver = ps7GetSiliconVersion ();
@@ -11959,7 +11959,7 @@ ps7_post_config()
 }
 
 int
-ps7_debug() 
+ps7_debug(void) 
 {
   // Get the PS_VERSION on run time
   unsigned long si_ver = ps7GetSiliconVersion ();
@@ -11979,7 +11979,7 @@ ps7_debug()
 
 
 int
-ps7_init() 
+ps7_init(void) 
 {
   // Get the PS_VERSION on run time
   unsigned long si_ver = ps7GetSiliconVersion ();
@@ -12072,7 +12072,7 @@ int get_number_of_cycles_for_delay(unsigned int delay)
 	*(volatile unsigned int*)SCU_GLOBAL_TIMER_CONTROL = 0;
 }
 
-void perf_reset_and_start_timer() 
+void perf_reset_and_start_timer(void) 
 {
   	    perf_reset_clock();
 	    perf_start_clock();
