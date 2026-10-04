@@ -214,6 +214,7 @@ dtb-$(CONFIG_ARCH_ZYNQ) += \
 	zynq-cse-qspi-x2-stacked.dtb \
 	zynq-dlc20-rev1.0.dtb \
 	zynq-microzed.dtb \
+	zynq-qmtech-xc720.dtb \
 	zynq-minized.dtb \
 	zynq-picozed.dtb \
 	zynq-syzygy-hub.dtb \
