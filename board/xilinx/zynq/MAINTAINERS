@@ -7,3 +7,4 @@ F:	board/xilinx/zynq/
 F:	include/configs/zynq*.h
 F:	configs/zynq_*_defconfig
 F:	configs/xilinx_zynq_*
+F:	configs/ac7020c_defconfig
